@@ -2,7 +2,7 @@
   "name": "electrondemo",
   "version": "1.0.0",
   "description": "This is a readme.",
-  "main": "main.js",
+  "main": "js/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,7 +16,9 @@
     "url": "https://github.com/Lionel-Peiran/ElectronDemo/issues"
   },
   "homepage": "https://github.com/Lionel-Peiran/ElectronDemo#readme",
-  "dependencies": {},
+  "dependencies": {
+    "echarts": "^4.8.0"
+  },
   "devDependencies": {
     "electron": "^9.2.1"
   }
