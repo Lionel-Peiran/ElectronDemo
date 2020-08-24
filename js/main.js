@@ -7,8 +7,8 @@ var mainWindow = null //声明要打开的主窗口
 
 app.on('ready', () => {
     mainWindow = new BrowserWindow({
-        width: 1024,
-        height: 768,
+        width: 1280,
+        height: 720,
         webPreferences: { nodeIntegration: true }
     });
     mainWindow.loadFile('index.html');//加载页面
