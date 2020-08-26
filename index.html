@@ -22,29 +22,35 @@
                 <a class="choice">请选择排序算法：</a>
                 <br>
                 <div class="input">
-                    <input type="radio" name="sort_method"> 直接插入排序
+                    <input type="radio" name="sort_method" value="直接插入排序"> 直接插入排序
                     <br>
-                    <input type="radio" name="sort_method"> 折半插入排序
+                    <input type="radio" name="sort_method" value="折半插入排序"> 折半插入排序
                     <br>
-                    <input type="radio" name="sort_method"> 希尔排序
+                    <input type="radio" name="sort_method" value="希尔排序"> 希尔排序
                     <br>
-                    <input type="radio" name="sort_method"> 冒泡排序
+                    <input type="radio" name="sort_method" value="冒泡排序"> 冒泡排序
                     <br>
-                    <input type="radio" name="sort_method" checked> 快速排序
+                    <input type="radio" name="sort_method" value="快速排序" checked> 快速排序
                     <br>
-                    <input type="radio" name="sort_method"> 简单选择排序
+                    <input type="radio" name="sort_method" value="简单选择排序"> 简单选择排序
                     <br>
                 </div>
                 <br>
                 <a class="choice">请输入需进行排序的元素：</a>
                 <div class="input">
-                    <textarea style="resize: none;" cols="46"
-                        placeholder="元素之前请使用空格隔开，仅支持十进制数字，输入数字外的其他字符会导致程序报错。"></textarea>
+                    <textarea id="data" style="resize: none;" cols="46"
+                        placeholder="元素之前请使用空格或换行隔开，仅支持十进制数字，输入数字外的其他字符会导致程序报错。"></textarea>
                 </div>
                 <br>
+                <a class="choice">请输入元素变换时间间隔：(ms)</a>
+                <div class="input_range">
+                    <input type="range" name="salary" max="8000" min="200" step="200" value="1000"
+                        onload="document.getElementById('show').innerHTML=value"
+                        oninput="document.getElementById('show').innerHTML=value"><span id="show"></span>
+                </div>
                 <br>
                 <div class="button">
-                    <button>Start</button>
+                    <button id="start">Start</button>
                     <button>Stop</button>
                     <button>Cancel</button>
                 </div>
@@ -53,10 +59,13 @@
         </div>
         <div class="column">
             <div class="chart">
-                2
+                <p id="test">
+                    33333
+                </p>
             </div>
         </div>
     </section>
+    <script src="js/button.js"></script>
     <script src="js/flexible.js"></script>
     <script src="js/echarts.min.js"></script>
 </body>
