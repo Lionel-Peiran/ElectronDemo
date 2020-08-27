@@ -9,6 +9,19 @@
 </head>
 
 <body>
+    <script src="js/electron_bugfix.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/flexible.js"></script>
+
+    <script>
+        //全局变量
+        var running = false;
+        var choice = 4;//默认选择快排
+        var running = false;
+        var delay = 1000;
+        var data = [];
+        var sequence = [];//用于显示
+    </script>
     <header>
         <h1>数据结构：几种排序方式</h1>
         <div class="my_information">by：李培然 1852839</div>
@@ -39,35 +52,35 @@
                 <a class="choice">请输入需进行排序的元素：</a>
                 <div class="input">
                     <textarea id="data" style="resize: none;" cols="46"
-                        placeholder="元素之前请使用空格或换行隔开，仅支持十进制数字，输入数字外的其他字符会导致程序报错。"></textarea>
+                        placeholder="元素之间请使用空格或换行隔开，仅支持十进制数字，输入数字外的其他字符会导致程序报错。"></textarea>
                 </div>
                 <br>
-                <a class="choice">请输入元素变换时间间隔：(ms)</a>
+                <a class="choice">请选择数据交换的时间间隔：(ms)</a>
                 <div class="input_range">
-                    <input type="range" name="salary" max="8000" min="200" step="200" value="1000"
+                    <input type="range" id="delay" max="2000" min="200" step="200" value="1000"
                         onload="document.getElementById('show').innerHTML=value"
                         oninput="document.getElementById('show').innerHTML=value"><span id="show"></span>
                 </div>
                 <br>
                 <div class="button">
                     <button id="start">Start</button>
-                    <button>Stop</button>
-                    <button>Cancel</button>
                 </div>
 
             </div>
         </div>
         <div class="column">
             <div class="chart">
-                <p id="test">
-                    33333
+            </div>
+            <div class="message">
+                <p id="data_out">
+                    当前排列情况：1，2，4，8，16，32，64，128，256，512
                 </p>
             </div>
         </div>
     </section>
+    <script src="js/init_chart.js"></script>
+    <script src="js/SortMethod.js"></script>
     <script src="js/button.js"></script>
-    <script src="js/flexible.js"></script>
-    <script src="js/echarts.min.js"></script>
 </body>
 
 </html>
