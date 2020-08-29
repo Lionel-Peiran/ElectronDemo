@@ -19,7 +19,7 @@ function StringToFloat(data) {
     return temp;
 }
 
-async function show_Charts() {
+function show_Charts() {
     var i;
     for (i = 0; i < sequence.length; i++) {
         setTimeout(updateChart, delay * (i + 1), sequence[i]);

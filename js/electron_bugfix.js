@@ -1,6 +1,7 @@
+//修改默认对话框，修复electron弹出默认对话框后页面失去焦点的bug
 var userAgent = navigator.userAgent.toLowerCase();
 if (userAgent.indexOf(' electron/') > -1) {
-    const { dialog } = require('electron').remote;//修改默认对话框，修复electron弹出默认对话框后页面失去焦点的bug
+    const { dialog } = require('electron').remote;
     alert = function (str) {
         var options = {
             type: 'warning',
