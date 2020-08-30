@@ -22,17 +22,22 @@ function StringToFloat(data) {
 function show_Charts() {
     var i;
     for (i = 0; i < sequence.length; i++) {
-        setTimeout(updateChart, delay * (i + 1), sequence[i]);
-        console.log(delay * (i + 1));
+        setTimeout(updateChart, delay * (i + 2), sequence[i]);
+        console.log(delay * (i + 2));
     }
     setTimeout(function () {
         sequence.length = 0;
         alert("排序完成！");
         console.log("clear");
-    }, (i + 1) * delay);
+    }, (i + 2) * delay);
+}
+
+window.onload = function () {
+    myChart.setOption(option);
 }
 
 document.getElementById("start").onclick = function () {
+    var Chart = new Echart();
     var temp = document.getElementById("data").value.split(/\s+/);
     console.log(temp);
     if (!check_data(temp)) {
@@ -52,18 +57,8 @@ document.getElementById("start").onclick = function () {
             }
         }
         if (running) {
-            initChart(delay, data);
-            var b = [].concat(data);
-            sequence.push(b);
-            console.log(delay);
-            if (choice == 4) {//快速排序
-                quicksort(data, 0, data.length - 1);
-                console.log("sort_end");
-                console.log(sequence);
-            }
-            show_Charts();
 
-            console.log(sequence);
+            Chart.Sort(data, delay, choice);
         }
     }
 }
