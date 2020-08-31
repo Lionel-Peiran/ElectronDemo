@@ -53,8 +53,29 @@ class Echart {
     }
     Sort(data, delay, choice) {
         this.initChart(data, delay);
-        if (choice == 4) {
-            this._databox.QuickSort();
+        switch (choice) {
+            case 0:
+                this._databox.DirectInsertionSort();
+                break;
+            case 1:
+                this._databox.BinaryInsertSort();
+                break;
+            case 2:
+                this._databox.ShellSort();
+                break;
+            case 3:
+                this._databox.BubbleSort();
+                break;
+            case 4:
+                this._databox.QuickSort();
+                break;
+            case 5:
+                this._databox.SimpleSelectSort();
+                break;
+            default:
+                this._databox.DirectInsertionSort();
+                break;
+
         }
         this.ShowProcess();
     }
@@ -80,7 +101,7 @@ class Echart {
         var SortSequence = this._databox.ChartData;
         var i = 0;//计数器
         document.getElementById("start").disabled = true;
-        //js没有阻塞函数，因此使用排列任务表的方式完成延迟动画
+        //js没有阻塞函数，因此使用排列任务表的方式完成动画
         for (i = 0; i < SortSequence.length; i++) {
             setTimeout(this.updateChart, this._delay * (i + 1.5), SortSequence[i]);
             console.log(this._delay * (i + 2));
