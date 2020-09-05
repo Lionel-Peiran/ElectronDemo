@@ -9,7 +9,7 @@ document.getElementById("start").onclick = function () {
     console.log(temp);
     if (!check_data(temp)) {
         alert("您输入的数据有误，请保证您的输入仅包含数字，且数量大于1");
-        //document.getElementById("data").value = "";
+        document.getElementById("data").value = "";
     }
     else {
         data = StringToFloat(temp);
@@ -28,3 +28,7 @@ document.getElementById("start").onclick = function () {
         }
     }
 }
+
+window.addEventListener('resize', function () {
+    myChart.resize();
+});

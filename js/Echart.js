@@ -53,6 +53,7 @@ class Echart {
     }
     Sort(data, delay, choice) {
         this.initChart(data, delay);
+        this.updateChart(data);
         switch (choice) {
             case 0:
                 this._databox.DirectInsertionSort();
@@ -107,7 +108,6 @@ class Echart {
             console.log(this._delay * (i + 2));
         }
         setTimeout(function () {
-            sequence.length = 0;
             alert("排序完成！");
             document.getElementById("start").disabled = false;
             console.log("clear");

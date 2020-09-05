@@ -1,15 +1,4 @@
 //输入数据处理
-function check_data(data) {
-    if (data[0] == "" && data.length == 1) {
-        return false;
-    }
-    for (let n of data) {
-        if (isNaN(n))
-            return false;
-    }
-    return true;
-}
-
 function StringToFloat(data) {
     var temp = [];
     for (i = 0; i < data.length; i++) {
@@ -19,6 +8,23 @@ function StringToFloat(data) {
     }
     return temp;
 }
+
+function check_data(data) {
+    if (data[0] == "" && data.length == 1) {
+        return false;
+    }
+    for (let n of data) {
+        if (isNaN(n))
+            return false;
+    }
+    var temp = StringToFloat(data);
+    if (temp.length <= 1) {
+        return false;
+    }
+    return true;
+}
+
+
 //electron组件bug修复
 var userAgent = navigator.userAgent.toLowerCase();
 if (userAgent.indexOf(' electron/') > -1) {

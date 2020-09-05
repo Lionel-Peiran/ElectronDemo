@@ -12,15 +12,6 @@
     <script src="js/echarts.min.js"></script>
     <script src="js/flexible.js"></script>
     <script src="js/UniversalFunction.js"></script>
-    <script>
-        //全局变量
-        var running = false;
-        var choice = 4;//默认选择快排
-        var running = false;
-        var delay = 1000;
-        var data = [];
-        var sequence = [];//用于显示
-    </script>
     <header>
         <h1>数据结构：几种排序方式</h1>
         <div class="my_information">by：李培然 1852839</div>
@@ -48,10 +39,10 @@
                     <br>
                 </div>
                 <br>
-                <a class="choice">请输入需进行排序的元素：</a>
+                <a class="choice">请输入需进行排序的元素序列：</a>
                 <div class="input">
                     <textarea id="data" style="resize: none;" cols="46"
-                        placeholder="元素之间请使用空格或换行隔开，仅支持十进制数字，输入数字外的其他字符会导致程序报错。"></textarea>
+                        placeholder="元素之间请使用空格或换行隔开，仅支持十进制数字."></textarea>
                 </div>
                 <br>
                 <a class="choice">请选择数据交换的时间间隔：(ms)</a>
